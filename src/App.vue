@@ -1,26 +1,43 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <hero-block :hero="hero" />
+  <header-block />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import { info } from "@/helpers/data";
+import HeroBlock from "@/components/HeroBlock";
+import HeaderBlock from "@/components/HeaderBlock";
 
 export default {
-  name: 'App',
   components: {
-    HelloWorld
-  }
-}
+    HeroBlock,
+    HeaderBlock,
+  },
+
+  data() {
+    return {
+      hero: info.hero,
+    };
+  },
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
 }
 </style>
