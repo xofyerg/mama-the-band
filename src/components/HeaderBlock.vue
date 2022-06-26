@@ -17,24 +17,21 @@ export default {
 
 <style scoped>
 .header {
-  max-width: 100%;
-  display: flex;
-  display: -ms-flex;
-  display: -webkit-flex;
-  font-size: 17px;
-  background: -webkit-linear-gradient(45deg, #040d2c, #462a8b, #c505d6);
-  background: linear-gradient(45deg, #040d2c, #462a8b, #c505d6);
+  background-color: #323232;
+  display: grid;
+  place-items: center;
+  height: 3em;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.24);
 }
 
 ul {
-  margin: 14px auto;
   display: flex;
-  display: -ms-flex;
-  display: -webkit-flex;
   gap: 60px;
 }
 
 a {
-  color: #fff;
+  display: block;
+  padding: 9px;
+  color: #ffffff;
 }
 </style>
