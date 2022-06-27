@@ -4,12 +4,12 @@
 
     <div class="box-text-right" v-if="isRight">
       <div class="box-text__content">
-        <slot />
+        <div><slot /></div>
       </div>
     </div>
     <div class="box-text-left" v-else>
       <div class="box-text__content">
-        <slot />
+        <div><slot /></div>
       </div>
     </div>
   </div>
@@ -68,7 +68,6 @@ export default {
   top: 0;
   z-index: 1;
   max-width: 425px;
-  width: 100%;
   background-color: #323232;
 }
 
@@ -85,8 +84,8 @@ export default {
   display: grid;
   place-items: center;
   height: 100%;
-  padding: 25px 40px;
-  font-size: 27px;
+  padding: 15px 65px 15px 50px;
+  font-size: 24px;
   box-sizing: border-box;
   color: #ffffff;
 }

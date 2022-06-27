@@ -2,7 +2,9 @@
   <div class="hero">
     <my-backdrop />
 
-    <h1 class="hero__title">{{ hero }}</h1>
+    <h1 class="hero__title">
+      <div><slot></slot></div>
+    </h1>
   </div>
 </template>
 
@@ -12,12 +14,6 @@ import MyBackdrop from "@/components/UI/MyBackdrop";
 export default {
   components: {
     MyBackdrop,
-  },
-  props: {
-    hero: {
-      type: String,
-      required: true,
-    },
   },
 };
 </script>
@@ -37,6 +33,7 @@ export default {
 .hero__title {
   position: absolute;
   color: #fff;
-  font-size: 46px;
+  font-size: 48px;
+  text-align: center;
 }
 </style>
