@@ -2,14 +2,26 @@
   <hero-block :hero="hero" />
   <header-block />
 
-  <my-swiper :synthImgs="synthImgs" />
+  <box-block :images="synthImages"
+    >Маша - наша клавишница. Знает ноты как свои пять пальцев, но не
+    знает</box-block
+  >
+  <my-delimiter />
+  <box-block :images="synthImages" :isRight="true"></box-block>
+  <my-delimiter />
+  <box-block :images="synthImages"></box-block>
+  <my-delimiter />
+  <box-block :images="synthImages" :isRight="true"></box-block>
+  <my-delimiter />
+  <box-block :images="synthImages"></box-block>
 </template>
 
 <script>
 import { info } from "@/helpers/data";
 import HeroBlock from "@/components/HeroBlock";
 import HeaderBlock from "@/components/HeaderBlock";
-import MySwiper from "@/components/UI/MySwiper";
+import BoxBlock from "@/components/BoxBlock";
+import MyDelimiter from "@/components/UI/MyDelimiter";
 import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/navigation";
@@ -17,14 +29,15 @@ import "swiper/css/pagination";
 
 export default {
   components: {
+    BoxBlock,
     HeroBlock,
     HeaderBlock,
-    MySwiper,
+    MyDelimiter,
   },
   data() {
     return {
       hero: info.hero,
-      synthImgs: [
+      synthImages: [
         { value: "https://swiperjs.com/demos/images/nature-1.jpg", id: 1 },
         { value: "https://swiperjs.com/demos/images/nature-2.jpg", id: 2 },
         { value: "https://swiperjs.com/demos/images/nature-3.jpg", id: 3 },
