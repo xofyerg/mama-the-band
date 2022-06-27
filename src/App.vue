@@ -7,13 +7,13 @@
     знает</box-block
   >
   <my-delimiter />
-  <box-block :images="synthImages" :isRight="true"></box-block>
+  <box-block :images="guitar" :isRight="true">Саня П. Бля</box-block>
   <my-delimiter />
-  <box-block :images="synthImages"></box-block>
+  <box-block :images="drums"></box-block>
   <my-delimiter />
-  <box-block :images="synthImages" :isRight="true"></box-block>
+  <box-block :images="bass" :isRight="true"></box-block>
   <my-delimiter />
-  <box-block :images="synthImages"></box-block>
+  <box-block></box-block>
 </template>
 
 <script>
@@ -37,6 +37,9 @@ export default {
   data() {
     return {
       hero: info.hero,
+      guitar: info.guitar,
+      drums: info.drums,
+      bass: info.bass,
       synthImages: [
         { value: "https://swiperjs.com/demos/images/nature-1.jpg", id: 1 },
         { value: "https://swiperjs.com/demos/images/nature-2.jpg", id: 2 },

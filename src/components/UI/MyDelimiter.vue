@@ -8,7 +8,7 @@ export default {};
 
 <style scoped>
 .delimiter {
-  height: 2em;
+  height: 1em;
   background-color: #323232;
 }
 </style>
