@@ -11,7 +11,7 @@
     class="my-swiper"
   >
     <swiper-slide v-for="image in images" :key="image.id">
-      <img :src="image.value" alt="" />
+      <img :src="image" alt="" />
     </swiper-slide>
   </swiper>
 </template>
