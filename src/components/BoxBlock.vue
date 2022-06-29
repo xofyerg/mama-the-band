@@ -4,12 +4,16 @@
 
     <div class="box-text-right" v-if="isRight">
       <div class="box-text__content">
-        <div><slot /></div>
+        <div>
+          <slot />
+        </div>
       </div>
     </div>
     <div class="box-text-left" v-else>
       <div class="box-text__content">
-        <div><slot /></div>
+        <div>
+          <slot />
+        </div>
       </div>
     </div>
   </div>
@@ -22,6 +26,11 @@ export default {
   components: {
     MySwiper,
   },
+  data() {
+    return {
+      isInit: true,
+    };
+  },
   props: {
     images: {
       type: Array,
@@ -31,6 +40,9 @@ export default {
       type: Boolean,
       default: false,
     },
+  },
+  mounted() {
+    this.isInit = false;
   },
 };
 </script>
@@ -48,16 +60,15 @@ export default {
   bottom: 0;
   top: 0;
   z-index: 1;
-  max-width: 425px;
-  width: 100%;
-  background-color: #323232;
+  width: 425px;
+  background-color: rgba(32, 32, 32, 0.9);
 }
 
 .box-text-left::before {
   content: "";
   position: absolute;
   right: -100px;
-  border-bottom: 100vh solid #323232;
+  border-bottom: 100vh solid rgba(32, 32, 32, 0.9);
   border-right: 100px solid transparent;
 }
 
@@ -67,8 +78,8 @@ export default {
   bottom: 0;
   top: 0;
   z-index: 1;
-  max-width: 425px;
-  background-color: #323232;
+  width: 425px;
+  background-color: rgba(32, 32, 32, 0.9);
 }
 
 .box-text-right::before {
@@ -76,7 +87,7 @@ export default {
   position: absolute;
   left: -100px;
   top: 0;
-  border-bottom: 100vh solid #323232;
+  border-bottom: 100vh solid rgba(32, 32, 32, 0.9);
   border-left: 100px solid transparent;
 }
 
@@ -88,5 +99,31 @@ export default {
   font-size: 24px;
   box-sizing: border-box;
   color: #ffffff;
+}
+
+@media (max-width: 1024px) {
+  .box-text__content {
+    font-size: 16px;
+    padding: 20px;
+  }
+
+  .box-text-left,
+  .box-text-right {
+    width: 300px;
+  }
+}
+
+@media (max-width: 772px) {
+  .box-text-left,
+  .box-text-right {
+    width: 100%;
+  }
+}
+
+@media (max-height: 800px) {
+  .box-text__content {
+    font-size: 16px;
+    padding: 20px;
+  }
 }
 </style>

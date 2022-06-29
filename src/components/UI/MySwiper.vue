@@ -49,7 +49,7 @@ export default {
 }
 
 .my-swiper img {
-  width: 100%;
+  width: 101%;
   height: 100%;
   object-fit: cover;
 }

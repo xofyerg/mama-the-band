@@ -1,9 +1,11 @@
 <template>
-  <div class="hero">
+  <div class="hero" id="hero">
     <my-backdrop />
 
     <h1 class="hero__title">
-      <div><slot></slot></div>
+      <div>
+        <slot />
+      </div>
     </h1>
   </div>
 </template>
@@ -35,5 +37,12 @@ export default {
   color: #fff;
   font-size: 48px;
   text-align: center;
+  padding: 15px;
+}
+
+@media (max-width: 540px) {
+  .hero__title {
+    font-size: 28px;
+  }
 }
 </style>

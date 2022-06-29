@@ -8,7 +8,7 @@ export default {};
 
 <style scoped>
 .footer {
-  height: 6em;
+  height: 8em;
   background-color: #323232;
 }
 </style>
