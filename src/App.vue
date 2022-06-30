@@ -8,7 +8,7 @@
     </hero-block>
     <header-block />
 
-    <box-block :images="synth" id="synth">
+    <box-block :images="info.synth" id="synth">
       <h1>Мария М.</h1>
       <p>
         Клавишница со стажем. Может сыграть Франца Фердинанта с закрытыми
@@ -27,7 +27,7 @@
       </p>
     </box-block>
 
-    <box-block :images="guitar" :isRight="true" id="guitar">
+    <box-block :images="info.guitar" :isRight="true" id="guitar">
       <h1>Александр П.</h1>
       <p>
         Гитарист, басист, барабанщик, клавишник, вокалист, солист, баскетболист,
@@ -44,7 +44,7 @@
         группы, находится здесь только потому, что ему не с кем выпить пива.
       </p>
     </box-block>
-    <box-block :images="drums" id="drums">
+    <box-block :images="info.drums" id="drums">
       <h1>Михаил М.</h1>
       <p>
         Начинающий барабанщик. До сих пор не понимает, как открыл для себя мир
@@ -59,7 +59,7 @@
         красивых слов.
       </p>
     </box-block>
-    <box-block :images="bass" :isRight="true" id="bass">
+    <box-block :images="info.bass" :isRight="true" id="bass">
       <h1>Александр К.</h1>
       <p>
         Непревзойденный басист. Может играть только в перчатках из-за того, что
@@ -78,7 +78,7 @@
         мультфильме "Шрек".
       </p>
     </box-block>
-    <box-block :images="mot">
+    <box-block :images="info.mot">
       <h1>Мот</h1>
       <p>Наш пиар-менеджер и талисман группы.</p>
       <p>
@@ -91,6 +91,8 @@
       </p>
     </box-block>
 
+    <footer-block />
+
     <a href="#hero">
       <div class="app__btn" />
     </a>
@@ -98,10 +100,11 @@
 </template>
 
 <script>
-import { info } from "@/helpers/data";
+import { info } from "@/data";
 import HeroBlock from "@/components/HeroBlock";
 import HeaderBlock from "@/components/HeaderBlock";
 import BoxBlock from "@/components/BoxBlock";
+import FooterBlock from "@/components/FooterBlock";
 import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/navigation";
@@ -112,14 +115,11 @@ export default {
     BoxBlock,
     HeroBlock,
     HeaderBlock,
+    FooterBlock,
   },
   data() {
     return {
-      synth: info.synth,
-      guitar: info.guitar,
-      drums: info.drums,
-      bass: info.bass,
-      mot: info.mot,
+      info,
     };
   },
 };
@@ -187,5 +187,11 @@ p {
 .app__btn:hover {
   opacity: 1;
   transition: 0.1s ease;
+}
+
+@media (max-width: 832px) {
+  h1 {
+    font-size: 20px;
+  }
 }
 </style>

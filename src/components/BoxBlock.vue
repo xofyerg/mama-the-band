@@ -2,14 +2,14 @@
   <div class="box">
     <my-swiper :images="images" />
 
-    <div class="box-text-right" v-if="isRight">
+    <div class="box-text box-text__right" v-if="isRight">
       <div class="box-text__content">
         <div>
           <slot />
         </div>
       </div>
     </div>
-    <div class="box-text-left" v-else>
+    <div class="box-text box-text__left" v-else>
       <div class="box-text__content">
         <div>
           <slot />
@@ -26,11 +26,6 @@ export default {
   components: {
     MySwiper,
   },
-  data() {
-    return {
-      isInit: true,
-    };
-  },
   props: {
     images: {
       type: Array,
@@ -40,9 +35,6 @@ export default {
       type: Boolean,
       default: false,
     },
-  },
-  mounted() {
-    this.isInit = false;
   },
 };
 </script>
@@ -54,40 +46,33 @@ export default {
   position: relative;
 }
 
-.box-text-left {
+.box-text {
   position: absolute;
-  left: 0;
   bottom: 0;
   top: 0;
   z-index: 1;
-  width: 425px;
+  width: 29%;
   background-color: rgba(32, 32, 32, 0.9);
 }
+.box-text.box-text__left {
+  left: 0;
+}
+.box-text.box-text__right {
+  right: 0;
+}
 
-.box-text-left::before {
+.box-text__left::before,
+.box-text__right::before {
   content: "";
   position: absolute;
-  right: -100px;
   border-bottom: 100vh solid rgba(32, 32, 32, 0.9);
+}
+.box-text__left::before {
+  right: -100px;
   border-right: 100px solid transparent;
 }
-
-.box-text-right {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  top: 0;
-  z-index: 1;
-  width: 425px;
-  background-color: rgba(32, 32, 32, 0.9);
-}
-
-.box-text-right::before {
-  content: "";
-  position: absolute;
+.box-text__right::before {
   left: -100px;
-  top: 0;
-  border-bottom: 100vh solid rgba(32, 32, 32, 0.9);
   border-left: 100px solid transparent;
 }
 
@@ -101,29 +86,31 @@ export default {
   color: #ffffff;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1440px) {
+  .box-text__content {
+    padding: 20px;
+    font-size: 16px;
+  }
+}
+@media (max-height: 832px) {
   .box-text__content {
     font-size: 16px;
-    padding: 20px;
-  }
-
-  .box-text-left,
-  .box-text-right {
-    width: 300px;
   }
 }
 
-@media (max-width: 772px) {
-  .box-text-left,
-  .box-text-right {
+@media (max-width: 832px) {
+  .box-text__content {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 572px) {
+  .box-text {
     width: 100%;
+    background-color: rgba(32, 32, 32, 0.8);
   }
-}
-
-@media (max-height: 800px) {
   .box-text__content {
-    font-size: 16px;
-    padding: 20px;
+    font-size: 20px;
   }
 }
 </style>
